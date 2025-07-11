@@ -1,17 +1,41 @@
-# os: linux
+os: linux
 language: generic
-# dist: focal
+dist: focal
 
-# vm:
-#   create:
-#     name: regression-tests-i5
-
-# script:
-#   - echo "Creating custom file"
-#   - sudo mkdir /my-custom-dir
-#   - echo "Test custom image!" | sudo tee /my-custom-dir/my_custom_file.txt
-#   - sudo cat /my-custom-dir/my_custom_file.txt
-
-vm:
-  use:
-    name: regression-tests-i5
+jobs:
+  include:
+    - stage: "Tests"
+      name: "Create custom image 1"
+      vm:
+        create:
+          name: regression-tests-i6
+      script:
+        - echo "Running Job 1"
+    - stage: "Tests"
+      name: "Create custom image 2"
+      vm:
+        create:
+          name: regression-tests-i7
+      script:
+        - echo "Running Job 2"
+    - stage: "Tests"
+      name: "Create custom image 3"
+      vm:
+        create:
+          name: regression-tests-i8
+      script:
+        - echo "Running Job 3"
+    - stage: "Tests"
+      name: "Create custom image 4"
+      vm:
+        create:
+          name: regression-tests-i9
+      script:
+        - echo "Running Job 4"
+    - stage: "Tests"
+      name: "Create custom image 5"
+      vm:
+        create:
+          name: regression-tests-i10
+      script:
+        - echo "Running Job 5"
