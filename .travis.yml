@@ -4,7 +4,7 @@ dist: focal
 
 vm:
   create:
-    name: regression-tests-i1
+    name: regression-tests-i2
 
 script:
   - echo "Creating custom file"
